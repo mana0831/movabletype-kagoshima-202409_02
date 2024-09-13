@@ -1,0 +1,67 @@
+<!DOCTYPE html><$mt:Include module="全般設定" strip_linefeeds="1"$>
+<html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/WebPage">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<meta charset="<$mt:PublishCharset$>">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="<$mt:EntryExcerpt encode_html="1"$>">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><$mt:EntryTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$></title>
+<link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
+<link rel="start" href="<$mt:BlogURL encode_html="1"$>">
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>">
+<$mt:CanonicalLink$>
+
+<!-- Open Graph Protocol -->
+<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:Else><$mt:Var name="blog_lang"$></mt:If>">
+<meta property="og:title" content="<$mt:EntryTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$>">
+<meta property="og:type" content="article">
+<meta property="og:url" content="<$mt:EntryPermalink encode_html="1"$>">
+<meta property="og:image" content="<$mt:EntryThumbnailURL default="images/ogimage.jpg"$>">
+<meta property="og:description" content="<$mt:EntryExcerpt encode_html="1"$>">
+<meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@<$mt:Var name='x-twitterVia'$>">
+<meta name="twitter:title" content="<$mt:EntryTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$>">
+<meta name="twitter:description" content="<$mt:EntryExcerpt remove_html="1" encode_html="1" words="100"$>">
+<meta name="twitter:image" content="<$mt:EntryThumbnailURL default="images/ogimage.jpg"$>">
+
+<!-- Microdata -->
+<meta itemprop="description" content="<$mt:EntryExcerpt encode_html="1"$>">
+<link itemprop="url" href="<$mt:EntryPermalink encode_html="1"$>">
+<link itemprop="image" href="<$mt:EntryThumbnailURL default="images/ogimage.jpg"$>">
+<$mt:Include module="ヘッダー内script"$>
+</head>
+
+<body>
+<mt:SetVarBlock name="this_page">entry</mt:SetVarBlock>
+<$mt:Include module="ヘッダーメニュー"$>
+<$mt:Include module="ニュースヘッダー"$>
+<div class="container-fluid mt-container-fluid">
+  <div class="row mt-row newsWrap">
+    <div class="col-sm-3 mt-col-sm-3">
+      <$mt:Include module="ニュースサイドバー"$>
+    </div>
+    <div class="col-sm-9 mt-col-sm-9">
+    	<div class="newsdata__wrap">
+    		<p class="date"><time datetime="<$mt:EntryDate format="%Y-%m-%d"$>"><span class="year"><$mt:EntryDate format="%Y"$>.</span><span class="monthday"><$mt:EntryDate format="%b.%e"$></span></time></p>
+<mt:If tag="CategoryLabel"><p class="genre"><mt:EntryCategories type="primary"><$mt:CategoryLabel encode_html="1"$></mt:EntryCategories></p></mt:If>
+    	</div>
+      <main class="wysiwyg newsMain">
+        <div>
+          <h1><$mt:EntryTitle encode_html="1"$></h1>
+            <$mt:EntryBody$>
+            <$mt:EntryMore$>
+      </div>
+      </main>
+        <$mt:Include module="ソーシャルシェアボタン"$>
+    </div>
+  </div>
+</div>
+
+  <$mt:Include module="ページ上部に戻るボタン"$>
+  <$mt:Include module="パンくずリスト"$>
+  <$mt:Include module="フッター"$>
+</body>
+<$mt:Include module="フッター内script"$>
+</html>
