@@ -12,27 +12,27 @@
 <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>">
 <$mt:CanonicalLink$>
 <!-- Open Graph Protocol -->
-<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:Else><$mt:Var name="blog_lang"$></mt:If>">
+<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<$mt:Else$><$mt:Var name="blog_lang"$></mt:If>">
 <meta property="og:title" content="<$mt:BlogName encode_html="1"$>">
 <meta property="og:type" content="website">
 <meta property="og:url" content="<$mt:BlogURL encode_html="1"$>">
-<meta property="og:image" content="<mt:If name="default_ogp_image"><mt:Asset id="$default_ogp_image"><$mt:AssetURL$></mt:Asset><mt:Else><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:If>">
+<meta property="og:image" content="<mt:If name="default_ogp_image"><mt:Asset id="$default_ogp_image"><$mt:AssetURL$></mt:Asset><$mt:Else$><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:If>">
 <meta property="og:description" content="<$mt:BlogDescription remove_html="1" encode_html="1"$>">
 <meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@<$mt:Var name='x-twitterVia'$>">
+<meta name="twitter:site" content="@<$mt:Var name="x-twitterVia"$>">
 <meta name="twitter:title" content="<$mt:BlogName encode_html="1"$>">
 <meta name="twitter:description" content="<$mt:BlogDescription remove_html="1" encode_html="1"$>">
-<meta name="twitter:image" content="<mt:If name="default_ogp_image"><mt:Asset id="$default_ogp_image"><$mt:AssetURL$></mt:Asset><mt:Else><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:If>">
+<meta name="twitter:image" content="<mt:If name="default_ogp_image"><mt:Asset id="$default_ogp_image"><$mt:AssetURL$></mt:Asset><$mt:Else$><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:If>">
 <!-- Microdata -->
 <meta itemprop="description" content="<$mt:BlogDescription remove_html="1" encode_html="1"$>">
 <link itemprop="url" href="<$mt:BlogURL encode_html="1"$>">
-<link itemprop="image" href="<mt:If name="default_ogp_image"><mt:Asset id="$default_ogp_image"><$mt:AssetURL$></mt:Asset><mt:Else><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:If>">
+<link itemprop="image" href="<mt:If name="default_ogp_image"><mt:Asset id="$default_ogp_image"><$mt:AssetURL$></mt:Asset><$mt:Else$><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:If>">
 <$mt:Include module="ヘッダー内script"$>
 </head>
-<body> 
+<body>
 <$mt:Include module="ヘッダーメニュー"$>
-<div class="jumbotron mt-jumbotron jumbotron__indexImg"<mt:If name="asset_id"> style="background-image:url(<mt:Asset id="$asset_id"><$mt:AssetURL$></mt:Asset>);"<mt:Else><$mt:SetVar name="asset_id" value="1"$></mt:If>>
+<div class="jumbotron mt-jumbotron jumbotron__indexImg"<mt:If name="asset_id"> style="background-image:url(<mt:Asset id="$asset_id"><$mt:AssetURL$></mt:Asset>);"<$mt:Else$><$mt:SetVar name="asset_id" value="1"$></mt:If>>
 <$mt:Var name="asset_id" editor:type="image" editor:mode="editor" editor:update:selector=".jumbotron__indexImg" editor:update:attribute="style:backgroundImage" editor:label="メイン画像" editor:button:position="-270,5"$>
 <div class="container mt-container">
       <hgroup class="mainlead__block" <mt:If name="mainlead__block">data-mt-site-editor-mainlead__block="1"</mt:If>>
@@ -45,8 +45,8 @@
 </div>
 <$mt:Include module="メインページ内リンクボックス"$>
 <section class="newsarea">
-  <div class="container-fluid mt-container-fluid">        
-      <h3 class="newsarea__title">最新情報</h3>
+  <div class="container-fluid mt-container-fluid">
+      <h3 class="newsarea__title">最新のお知らせ</h3>
     <div class="newsarea__entry">
       <ul>
         <mt:Entries limit="3">
